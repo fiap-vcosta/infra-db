@@ -26,7 +26,9 @@ Terraform da camada de **banco** (Cloud SQL / PostgreSQL) na GCP. Org [fiap-vcos
 ## Comandos
 
 ```bash
+cd terraform
 terraform fmt -check
+terraform init -backend=false
 terraform validate
 # plan/apply: só com backend configurado e confirmação humana
 ```
