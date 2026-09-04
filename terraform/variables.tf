@@ -13,7 +13,7 @@ variable "region" {
 variable "network_name" {
   type        = string
   description = "Nome da VPC dedicada."
-  default     = "techchallenge"
+  default     = "techchallenge-vpc"
 }
 
 variable "subnet_cidr" {
@@ -25,7 +25,7 @@ variable "subnet_cidr" {
 variable "db_instance_name" {
   type        = string
   description = "Nome da instância Cloud SQL."
-  default     = "techchallenge"
+  default     = "techchallenge-pg"
 }
 
 variable "db_name" {

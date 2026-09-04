@@ -4,8 +4,8 @@ Terraform da camada de **banco** (Cloud SQL / PostgreSQL) na GCP — Tech Challe
 
 ## Escopo
 
-- VPC dedicada + Private Service Access (IP privado do SQL)
-- Cloud SQL PostgreSQL 16 (`db-f1-micro`, sem HA)
+- VPC `techchallenge-vpc` + Private Service Access (IP privado do SQL)
+- Cloud SQL PostgreSQL 16 (`techchallenge-pg`, `db-f1-micro`, sem HA)
 - Database `techchallenge`, usuário `api`
 - Senha em Secret Manager (gerada no apply)
 - Outputs rígidos: `network_id`, `subnet_id`, `connection_name`, `db_name`, `db_user`, `db_password_secret_id`
