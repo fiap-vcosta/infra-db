@@ -67,8 +67,6 @@ Plan/apply local exigem ADC (`gcloud auth application-default login`) e backend 
 
 Após destroy, o nome da instância Cloud SQL pode ficar reservado por alguns dias na GCP; se o próximo apply falhar por nome em uso, altere `db_instance_name` ou aguarde.
 
-O `tf-destroy` espera ~2 min entre apagar o SQL e o peering PSA (eventual consistency da GCP). Se ainda falhar com “Producer services are still using this connection”, espere alguns minutos e rode **tf-destroy** de novo.
-
 ## Agentes
 
 Ver [AGENTS.md](AGENTS.md).

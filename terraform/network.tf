@@ -24,11 +24,5 @@ resource "google_service_networking_connection" "private_services" {
   network                 = google_compute_network.main.id
   service                 = "servicenetworking.googleapis.com"
   reserved_peering_ranges = [google_compute_global_address.private_services.name]
-}
-
-resource "time_sleep" "after_psa" {
-  create_duration  = "30s"
-  destroy_duration = "120s"
-
-  depends_on = [google_service_networking_connection.private_services]
+  deletion_policy         = "REMOVE_PEERING"
 }
