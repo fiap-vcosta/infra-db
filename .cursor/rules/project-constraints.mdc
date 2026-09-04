@@ -10,5 +10,6 @@ alwaysApply: true
 - **`terraform apply` / destroy** só via workflow **manual** (`workflow_dispatch`) ou CLI consciente — nunca em todo push/`merge` em `main`.
 - Bucket de **state** remoto fica **fora** do destroy da demo; não apagar state no `infra-down`.
 - Não commitar credenciais, tfvars com senha, nem service account keys; usar Secret Manager / OIDC / vars de CI.
-- CI barato: `fmt` + `validate` (+ `plan` em PR quando OIDC leitura existir).
+- CI barato: `fmt` + `validate` (+ `plan` em PR quando OIDC leitura existir); root module em `terraform/`.
 - Não inventar ambientes (homolog/`dev`); um único desenho alinhado à janela de demo.
+- README sem referências a checklist interno (§N) nem a pastas só do workspace local.
