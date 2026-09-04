@@ -23,7 +23,10 @@ resource "google_sql_database_instance" "main" {
 
   deletion_protection = false
 
-  depends_on = [google_service_networking_connection.private_services]
+  depends_on = [
+    google_service_networking_connection.private_services,
+    time_sleep.after_psa,
+  ]
 }
 
 resource "google_sql_database" "app" {
