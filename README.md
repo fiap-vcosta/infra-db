@@ -8,7 +8,7 @@ Terraform da camada de **banco** (Cloud SQL / PostgreSQL) na GCP — Tech Challe
 - Cloud SQL PostgreSQL 16 (`db-f1-micro`, sem HA)
 - Database `techchallenge`, usuário `api`
 - Senha em Secret Manager (gerada no apply)
-- Outputs para o cluster consumir (`connection_name`, rede, secret id, etc.)
+- Outputs rígidos: `network_id`, `subnet_id`, `connection_name`, `db_name`, `db_user`, `db_password_secret_id`
 - Região `us-central1`, projeto `vcosta-fiap-tech-challenge`
 - State remoto em GCS (bootstrap fora deste stack; `tf-destroy` não apaga o bucket)
 
