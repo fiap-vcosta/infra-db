@@ -12,7 +12,7 @@ resource "google_sql_database_instance" "main" {
 
     ip_configuration {
       ipv4_enabled                                  = false
-      private_network                               = google_compute_network.main.id
+      private_network                               = data.terraform_remote_state.bootstrap.outputs.network_id
       enable_private_path_for_google_cloud_services = true
     }
 
@@ -22,8 +22,6 @@ resource "google_sql_database_instance" "main" {
   }
 
   deletion_protection = false
-
-  depends_on = [google_service_networking_connection.private_services]
 }
 
 resource "google_sql_database" "app" {

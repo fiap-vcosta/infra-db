@@ -1,6 +1,6 @@
 # Tech Challenge — Guia para agentes (`infra-db`)
 
-Terraform da camada de **banco** (Cloud SQL / PostgreSQL) na GCP. Org [fiap-vcosta](https://github.com/fiap-vcosta). Cluster/Gateway ficam em `infra-k8s`.
+Terraform da camada de **banco** (Cloud SQL / PostgreSQL) na GCP. Org [fiap-vcosta](https://github.com/fiap-vcosta). Rede e WIF ficam em `infra-bootstrap`; cluster/Gateway em `infra-k8s`.
 
 ## Antes de mudar código
 
@@ -13,13 +13,16 @@ Terraform da camada de **banco** (Cloud SQL / PostgreSQL) na GCP. Org [fiap-vcos
 
 | Peça | Papel |
 |------|--------|
-| Terraform | Instância Cloud SQL, rede mínima necessária ao SQL, outputs para a API |
+| Terraform | Instância Cloud SQL, database/usuário, senha no Secret Manager, outputs para a API |
+| Rede | **Consumida** do `infra-bootstrap` via `terraform_remote_state` |
 | State | Backend remoto (bucket) **persistente** entre demos |
-| Fora de escopo | GKE, API Gateway, Function auth, código da API |
+| Fora de escopo | VPC/subnet/PSA, WIF e roles, GKE, API Gateway, Function auth, código da API |
 
 ## Regras canônicas (resumo)
 
 - Apply/destroy manuais; CI só valida
+- Este stack é descartável: nasce e morre na janela de demo
+- Rede não se cria aqui; se falta algo na VPC, o PR é no `infra-bootstrap`
 - State não morre no destroy da demo
 - Sem secrets no Git
 
