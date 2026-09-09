@@ -6,6 +6,7 @@ alwaysApply: true
 # Restrições do projeto (`infra-db`)
 
 - Escopo: **Terraform** para **Cloud SQL (PostgreSQL)** da demo GCP — não misturar GKE/Gateway (repo `infra-k8s`).
+- Rede (VPC/subnet/PSA), WIF e roles de CI moram no `infra-bootstrap`; aqui só se **lê** via `terraform_remote_state`.
 - Maximizar free tier / custo baixo; região barata (candidato `us-central1` até ADR fechar).
 - **`terraform apply` / destroy** só via workflow **manual** (`workflow_dispatch`) ou CLI consciente — nunca em todo push/`merge` em `main`.
 - Bucket de **state** remoto fica **fora** do destroy da demo; não apagar state no `infra-down`.
