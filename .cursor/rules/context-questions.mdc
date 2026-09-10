@@ -8,4 +8,4 @@ alwaysApply: true
 - Nunca assumir requisitos de rede, sizing, região ou custo quando estiverem ambíguos.
 - Antes de `apply`, mudança de engine/versão SQL, IPs públicos ou destruição de state: perguntar.
 - Preferir 1–2 perguntas críticas por vez; propor opções concretas.
-- Canon: ADRs deste repo + decisões Fase 03 (`local/FASE03-CHECKLIST.md` no workspace).
+- Canon: ADRs em `docs/adrs/` deste repo (e decisões já tomadas na subida da nuvem).

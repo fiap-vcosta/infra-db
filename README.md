@@ -75,6 +75,10 @@ O `infra-bootstrap` não entra nesse ciclo: ele é pré-requisito aplicado uma v
 
 Após destroy, o nome da instância Cloud SQL pode ficar reservado por alguns dias na GCP; se o próximo apply falhar por nome em uso, altere `db_instance_name` ou aguarde.
 
+## Decisões (ADRs)
+
+Ver [`docs/README.md`](docs/README.md): escolha do PostgreSQL e Cloud SQL na demo.
+
 ## Agentes
 
 Ver [AGENTS.md](AGENTS.md).
