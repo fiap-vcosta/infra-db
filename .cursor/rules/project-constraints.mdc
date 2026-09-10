@@ -7,7 +7,7 @@ alwaysApply: true
 
 - Escopo: **Terraform** para **Cloud SQL (PostgreSQL)** da demo GCP — não misturar GKE/Gateway (repo `infra-k8s`).
 - Rede (VPC/subnet/PSA), WIF e roles de CI moram no `infra-bootstrap`; aqui só se **lê** via `terraform_remote_state`.
-- Maximizar free tier / custo baixo; região barata (candidato `us-central1` até ADR fechar).
+- Maximizar free tier / custo baixo; região **`us-central1`** (fechada; ver ADRs em `docs/adrs/`).
 - **`terraform apply` / destroy** só via workflow **manual** (`workflow_dispatch`) ou CLI consciente — nunca em todo push/`merge` em `main`.
 - Bucket de **state** remoto fica **fora** do destroy da demo; não apagar state no `infra-down`.
 - Não commitar credenciais, tfvars com senha, nem service account keys; usar Secret Manager / OIDC / vars de CI.

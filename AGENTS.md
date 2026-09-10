@@ -4,7 +4,7 @@ Terraform da camada de **banco** (Cloud SQL / PostgreSQL) na GCP. Org [fiap-vcos
 
 ## Antes de mudar código
 
-1. Ler ADRs deste repo (quando existirem) e decisões de custo/demo da Fase 03
+1. Ler ADRs em [`docs/adrs/`](docs/adrs/) e decisões de custo/demo já tomadas
 2. Espelhar módulos/pastas vizinhas; não inventar layout paralelo
 3. Não rodar `apply`/`destroy` sem confirmação explícita do usuário
 4. **Git:** nunca commit/push direto em `main` — branch → PR → merge (ver [`.cursor/rules/git-workflow.mdc`](.cursor/rules/git-workflow.mdc))
