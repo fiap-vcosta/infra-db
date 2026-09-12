@@ -25,12 +25,15 @@ resource "google_sql_database_instance" "main" {
 }
 
 resource "google_sql_database" "app" {
-  name     = var.db_name
-  instance = google_sql_database_instance.main.name
+  name            = var.db_name
+  instance        = google_sql_database_instance.main.name
+  deletion_policy = "ABANDON"
+  depends_on      = [google_sql_user.api]
 }
 
 resource "google_sql_user" "api" {
-  name     = var.db_user
-  instance = google_sql_database_instance.main.name
-  password = random_password.db.result
+  name            = var.db_user
+  instance        = google_sql_database_instance.main.name
+  password        = random_password.db.result
+  deletion_policy = "ABANDON"
 }

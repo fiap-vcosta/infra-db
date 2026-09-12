@@ -73,6 +73,8 @@ Plan/apply local exigem ADC (`gcloud auth application-default login`) e backend 
 
 O `infra-bootstrap` não entra nesse ciclo: ele é pré-requisito aplicado uma vez, e o destroy daqui não toca na rede dele. Isso também elimina a corrida entre apagar a instância e apagar o peering do PSA, que antes exigia espera no destroy.
 
+Database e user usam `deletion_policy = "ABANDON"`: depois que a API roda migrations, o user `api` é owner do schema e a Admin API não consegue `DROP` (nem o database nem o role). No `tf-destroy`, o Terraform só esquece esses dois recursos; a exclusão da **instância** remove tudo de fato.
+
 Após destroy, o nome da instância Cloud SQL pode ficar reservado por alguns dias na GCP; se o próximo apply falhar por nome em uso, altere `db_instance_name` ou aguarde.
 
 ## Decisões (ADRs)
