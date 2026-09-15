@@ -13,4 +13,4 @@ alwaysApply: true
 - Não commitar credenciais, tfvars com senha, nem service account keys; usar Secret Manager / OIDC / vars de CI.
 - CI barato: `fmt` + `validate` (+ `plan` em PR quando OIDC leitura existir); root module em `terraform/`.
 - Não inventar ambientes (homolog/`dev`); um único desenho alinhado à janela de demo.
-- README sem referências a checklist interno (§N) nem a pastas só do workspace local.
+- README autocontido: sem referências a pastas fora do Git nem a numeração de documentos pessoais.

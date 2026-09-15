@@ -81,6 +81,18 @@ Após destroy, o nome da instância Cloud SQL pode ficar reservado por alguns di
 
 Ver [`docs/README.md`](docs/README.md): escolha do PostgreSQL e Cloud SQL na demo.
 
+Diagrama de componentes da nuvem: README do [`infra-k8s`](https://github.com/fiap-vcosta/infra-k8s#componentes-nuvem). Modelo de dados (ER) da aplicação: [`api/docs/08_modelo-de-dados.md`](https://github.com/fiap-vcosta/api/blob/main/docs/08_modelo-de-dados.md).
+
+## Repos da org
+
+| Repo | Papel | Diagrama / doc-chave |
+|------|--------|----------------------|
+| [`infra-bootstrap`](https://github.com/fiap-vcosta/infra-bootstrap) | Rede, WIF, AR, zona DNS | Persistente |
+| [`infra-db`](https://github.com/fiap-vcosta/infra-db) | Cloud SQL | ADRs (acima) |
+| [`infra-k8s`](https://github.com/fiap-vcosta/infra-k8s) | GKE + Gateway + Cloud Run auth | [Componentes](https://github.com/fiap-vcosta/infra-k8s#componentes-nuvem) |
+| [`api`](https://github.com/fiap-vcosta/api) | App + manifests + Requestly | [ER](https://github.com/fiap-vcosta/api/blob/main/docs/08_modelo-de-dados.md) |
+| [`auth`](https://github.com/fiap-vcosta/auth) | Imagem documento → JWT | Sequência no README |
+
 ## Agentes
 
 Ver [AGENTS.md](AGENTS.md).
