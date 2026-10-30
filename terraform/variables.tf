@@ -16,20 +16,8 @@ variable "db_instance_name" {
   default     = "tech-challenge-pg"
 }
 
-variable "db_name" {
-  type        = string
-  description = "Nome do database da aplicação."
-  default     = "techchallenge"
-}
-
-variable "db_user" {
-  type        = string
-  description = "Usuário PostgreSQL da aplicação."
-  default     = "api"
-}
-
 variable "db_tier" {
   type        = string
   description = "Tier da instância Cloud SQL."
-  default     = "db-f1-micro"
+  default     = "db-g1-small"
 }
