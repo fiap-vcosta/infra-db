@@ -52,7 +52,7 @@ Org vars: `GCP_PROJECT_ID`, `GCP_REGION`, `GCP_WORKLOAD_IDENTITY_PROVIDER`, `GCP
 
 Os serviços conectam pelo Cloud SQL Auth Proxy (sidecar no cluster). O proxy autentica na instância via IAM. O login no PostgreSQL é o usuário e a senha criados no Terraform de cada serviço. O connection name sai do output `connection_name` (`project:region:instance`).
 
-O tier `db-g1-small` deixa o default de `max_connections` em 50 para a instância inteira (o `db-f1-micro` fica em 25). O pool de cada serviço precisa caber nesse teto. A justificativa está na [ADR 002](docs/adrs/002-cloud-sql.md).
+O tier `db-g1-small` deixa o default de `max_connections` em 50 para a instância inteira (o `db-f1-micro` fica em 25). O pool de cada serviço precisa caber nesse teto. A justificativa está na [ADR 003](docs/adrs/003-instancia-compartilhada.md).
 
 ## Comandos locais
 
