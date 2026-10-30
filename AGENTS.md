@@ -13,10 +13,10 @@ Terraform da camada de **banco** (Cloud SQL / PostgreSQL) na GCP. Org [fiap-vcos
 
 | Peça | Papel |
 |------|--------|
-| Terraform | Instância Cloud SQL, database/usuário, senha no Secret Manager, outputs para a API |
+| Terraform | Instância Cloud SQL compartilhada; outputs `instance_name` e `connection_name` |
 | Rede | **Consumida** do `infra-bootstrap` via `terraform_remote_state` |
 | State | Backend remoto (bucket) **persistente** entre demos |
-| Fora de escopo | VPC/subnet/PSA, WIF e roles, GKE, API Gateway, Function auth, código da API |
+| Fora de escopo | Database, usuário e secret de cada serviço; VPC/subnet/PSA, WIF e roles, GKE, API Gateway, código dos serviços |
 
 ## Regras canônicas (resumo)
 

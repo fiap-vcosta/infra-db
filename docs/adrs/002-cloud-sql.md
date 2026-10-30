@@ -1,7 +1,7 @@
 # ADR 002: Cloud SQL PostgreSQL na Demo GCP
 
 **Data:** 10 de Setembro de 2026  
-**Status:** Aceito  
+**Status:** Substituída pela [ADR 003](003-instancia-compartilhada.md)  
 **Autores:** Victor Costa
 
 ## 1. Contexto e Problema
