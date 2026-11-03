@@ -30,8 +30,7 @@ Root module: [`terraform/`](terraform/).
 
 | Tipo | Quando | Automático? |
 |------|--------|-------------|
-| **CI** `fmt` + `validate` | PR / push | Sim |
-| **CI** `plan` (OIDC) | PR | Sim |
+| **CI** `fmt` + `validate` (+ `plan` em PR) | PR / push | Sim ([`.github/workflows/`](.github/workflows/) → [`fiap-vcosta/actions`](https://github.com/fiap-vcosta/actions)) |
 | **`tf-apply` / `tf-destroy`** | Janela da demo | Só manual (`workflow_dispatch`) |
 
 Merge em `main` **nunca** liga Cloud SQL.
