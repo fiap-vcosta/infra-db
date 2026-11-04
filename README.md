@@ -5,6 +5,7 @@ Terraform da instância compartilhada de **Cloud SQL / PostgreSQL** na GCP — T
 ## Escopo
 
 - Cloud SQL PostgreSQL 16 (`tech-challenge-pg`, `db-g1-small`, sem HA, só IP privado)
+- Data API habilitada (`ALLOW_DATA_API`) para o Terraform de cada serviço rodar `CREATE ROLE` / `REVOKE CONNECT` sem IP público
 - Uma instância para `ordem-servico-service`, `estoque-service` e `administrativo-service`
 - Outputs: `instance_name`, `connection_name`
 - Região `us-central1`, projeto `vcosta-fiap-tech-challenge`
