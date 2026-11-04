@@ -9,6 +9,7 @@ resource "google_sql_database_instance" "main" {
     disk_type         = "PD_SSD"
     disk_size         = 10
     edition           = "ENTERPRISE"
+    data_api_access   = "ALLOW_DATA_API"
 
     ip_configuration {
       ipv4_enabled                                  = false
